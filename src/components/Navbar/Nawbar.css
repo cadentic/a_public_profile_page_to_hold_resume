@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* display: flex;
+    box-sizing: border-box; */
+}
+/* .iBGYSa{
+    width: 47px!important;
+} */
+.sc-fzXfLQ.tVUVE {
+    display: flex;
+    flex-direction: row;
+    width:17%;
+    margin-right: 208px;
+    /* padding: 0px; */
+    float: left;
+    flex-wrap: nowrap;
+}
+.jTDjxf{
+    width: 0px;
+}
+ 
+@media screen and (max-width: 1000px){
+input.sc-fzXfLR.foRfLf {
+    margin: 0px!important;
+    width: 100%;
+}
+}
+@media screen and (max-width: 1000px){
+    .sc-fzXfLQ.tVUVE {
+        margin: 0px!important;
+        width: inherit;
+        /* width: 100%; */
+    }
+    }
+    @media screen and (max-width: 600px){
+        .iBGYSa {
+            margin: 0px!important;
+            width: 10%;
+
+        }
+        }
+        @media screen and (max-width: 700px){
+            .grxaxs {
+                height: inherit!important;
+              display: flex;
+              flex-direction: column;
+              border: 5px solid red!important;
+              width: inherit;
+            }
+            }
+            @media screen and (max-width: 700px){
+                .hhwgse ,.hDioLM{
+                  width: inherit;
+                  display: flex!important;
+                  flex-direction: column;
+                  height: inherit;
+                  border: 0px!important;
+                  
+                }
+            }
+            
+           .input[type="text"]{
+                width: 6000px!important;
+            }
