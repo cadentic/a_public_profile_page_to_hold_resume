@@ -37,7 +37,7 @@ const ChatButton = styled.button`
     border-radius: 60px;
     background-color: red;
     width:70px;
-    height:65px;
+    height:70px;
   `
 const ChatViewWrapper = styled.div`
     position:fixed; 

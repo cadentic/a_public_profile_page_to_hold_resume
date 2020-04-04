@@ -1,10 +1,10 @@
 import React from 'react';
 import './Headerbottom.css';
+import styled, { css } from 'styled-components';
 import CallIcon from '@material-ui/icons/Call';
 import MailIcon from '@material-ui/icons/Mail';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import NearMeIcon from '@material-ui/icons/NearMe';
-import styled from 'styled-components';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -12,28 +12,23 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import ContactsIcon from '@material-ui/icons/Contacts';
 import DateRangeIcon from '@material-ui/icons/DateRange';
-import IconHver from './IconHver';
 import FilterCenterFocusIcon from '@material-ui/icons/FilterCenterFocus';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-// import Roundl from './Roundl';
-// import { render } from '@testing-library/react';
-// import styled from 'styled-components';
+import AnalysisChart from '../Charts/Analysis';
+import StatisticsChart from '../Charts/Statistics';
+import RadarChart from '../Charts/Radar';
+import StatTable from '../Charts/StatTable';
 
-// const imeagediv= styled.div`
-// @media screen and (min-width: 1000px) {
-//     .Maindiv {
-//    flex-direction: column!important;
-//    height: inherit;
-//   }
-// }
-// `
-
-// import AreaChart from '../AreaChart'
-
-
-
+const CharSectionTwo = styled.section`
+    width: 100%;
+    height: 360px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:row;
+    padding:10px; 
+`
 
 const Headerbottom = () => {
     return (
@@ -329,26 +324,17 @@ const Headerbottom = () => {
                     </div>
                 </div>
             </section>
-            <section style={{ width: '100%', height: '300px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+            <section style={{ width: '100%', height: '360px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
 
                 <div className="OnD">
-                    <div className="OwnL">
-                        <div style={{ width: '90%', display: 'flex', justifyContent: 'space-between' }}>
-                            <p style={{ marginTop: '20px' }}>ANALYSIS</p>
-                            <p style={{ marginTop: '20px' }}> <IconHver /></p>
-                        </div>
-                        {/* <AreaCshart/> */}
-                        {/* <Roundl /> */}
-                    </div>
-                    <div className="OwnR">
-                        {/* <div id="chartContainer" style={{height:"150px", width: "50%"}}></div> */}
-                        <div style={{ width: '90%', display: 'flex', justifyContent: 'space-between', }}>
-                            <p style={{ marginTop: '20px', display: 'flex', width: " 70%", justifycontent: " space-between" }}>STATISTICS<p className="Pw"> Wek</p><p className="Pw"> Wek</p><p className="Pw"> Wek</p></p>
-                            <p style={{ marginTop: '20px' }}> <IconHver /></p>
-                        </div>
-                    </div>
+                    <AnalysisChart/>
+                    <StatisticsChart/>
                 </div>
             </section>
+            <CharSectionTwo>
+                <RadarChart/>
+                <StatTable/>
+            </CharSectionTwo>
             <section className="sec" style={{ width: '100%', height: '300px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', padding: '10px' }}>
 
                 <div className="OnR">

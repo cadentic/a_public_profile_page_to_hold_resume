@@ -9,29 +9,8 @@
     border-radius: 5px;
     height: inherit;
 }
-li{
-    font-size: 10px!important;
-    line-height: 6px!important;
-    margin: 0px!important;
-    height: 10px!important;
-    width: 100%;
-    /* background-color: blanchedalmond!important; */
-    /* padding: 0px!important; */
-    border-radius: 30px!important;
 
-}
-ul{
-    /* margin-top: 40px!important; */
-    margin: 0px!important;
-    padding: 0px!important;
-    /* margin-left: -20px; */
-    width: 81px!important;
-    /* height: 70px!important; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    /* background-color: black; */
-}
+
 @media screen and (max-width: 800px) {
     .Maindiv {
   display: flex!important;
@@ -416,7 +395,7 @@ justify-content: space-between;
     border-radius: 30px;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .OwnL,.OwnR{
     width: 49%;

@@ -12,6 +12,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import styled, { css } from 'styled-components';
 import CallIcon from '@material-ui/icons/Call';
 import VideoCamIcon from '@material-ui/icons/Videocam';
+import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
         borderRadius:'3px',
         padding:'2px',
         maxWidth:'200px'
+    },
+    sendIcon:{
+        position:'absolute',
+        right:'10px'
     }
 }));
 
@@ -70,19 +75,21 @@ export default function Chat() {
     const [currMessage, setCurrMessage] = useState('')
 
     const sendMessage = (message) => {
-        let newMessageArray = messages.slice()
-        newMessageArray.push({
-            text:message,
-            sent:true
-        })
-        setMessages(newMessageArray)
-        //AXIOS call
+        if(currMessage!==''){
+            let newMessageArray = messages.slice()
+            newMessageArray.push({
+                text:message,
+                sent:true
+            })
+            setCurrMessage('')
+            setMessages(newMessageArray)
+            //AXIOS call
+        }
     }
 
     const handleOnEnter = (e) => {
-        if(e.keyCode===13){
+        if(e.keyCode===13 ){
             sendMessage(currMessage)
-            setCurrMessage('')
         }
     }
 
@@ -122,6 +129,7 @@ export default function Chat() {
                     value={currMessage} 
                     onChange={(e)=>{setCurrMessage(e.target.value)}}
                     placeholder='type your message' onKeyUp={handleOnEnter} />
+                <SendIcon onClick={()=>{sendMessage(currMessage)}} className={classes.sendIcon}/>
             </CardActions>
         </Card>
     );
