@@ -55,7 +55,7 @@ export default function StatTable() {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root} elevation={0} >
+        <Card style={{borderRadius:30}} className={classes.root} elevation={0} >
             <CardHeader
                 action={
                     <IconButton aria-label="settings" style={{ color: 'white' }}>

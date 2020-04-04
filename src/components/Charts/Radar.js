@@ -80,7 +80,7 @@ export default function RadarCOmponent() {
         }
       ])
     return (
-        <Card className={classes.root}>
+        <Card style={{borderRadius:30}} className={classes.root}>
             <CardHeader
                 action={
                     <IconButton aria-label="settings" style={{ color: 'white' }}>
