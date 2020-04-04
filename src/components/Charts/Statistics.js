@@ -117,7 +117,7 @@ export default function RecipeReviewCard() {
                         <Button size="small" variant={window==='year'?"contained":'outlined'} 
                             color="primary" className={classes.actionButton}
                             onClick={()=>{setWindow('year')}}>
-                            Yearl
+                            Year
                         </Button>
                         <IconButton style={{ color: 'white' }} aria-label="settings">
                             <MoreVertIcon />

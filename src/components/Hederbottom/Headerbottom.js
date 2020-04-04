@@ -260,8 +260,8 @@ const Headerbottom = () => {
                 </div>
 
                 <div className="TopRd">
-                    <div style={{ width: '90%', alignItems: 'center', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                        <h4 style={{ paddingBottom: '10px', borderBottom: '1px solid red', width: '20%', textAlign: 'center' }}>SKILLS</h4>
+                    <div style={{ width: '90%', alignItems: 'center', display: 'flex', flexDirection: 'column', height: '100%', paddingLeft:10 }}>
+                        <h4 style={{ paddingBottom: '10px', marginTop:'5px', borderBottom: '1px solid red', width: '20%', color:'red', textAlign: 'center' }}>SKILLS</h4>
                         <div style={{ width: '100%', height: '25%' }}>
                             <p style={{ fontSize: '13px', color: 'red', lineHeight: '10px' }}>WEB DESIGN</p>
                             <div class="timeline">
