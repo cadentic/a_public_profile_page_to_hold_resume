@@ -20,6 +20,7 @@ import AnalysisChart from '../Charts/Analysis';
 import StatisticsChart from '../Charts/Statistics';
 import RadarChart from '../Charts/Radar';
 import StatTable from '../Charts/StatTable';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const CharSectionTwo = styled.section`
     width: 100%;
@@ -354,7 +355,7 @@ const Headerbottom = () => {
                 </p>
 
             </section>
-            <section style={{ width: '100%', height: '300px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', padding: '10px' }}>
+            <section style={{ width: '100%', height: '320px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', padding: '10px' }}>
 
                 <div className="Tow">
 
@@ -373,17 +374,30 @@ const Headerbottom = () => {
                             <span style={{ display: 'flex', msFlexDirection: 'column', width: '20%', height: '62%' }}>  <MusicNoteIcon />Music</span>
                         </div>
                     </div>
-                    <div className="Ld"><p style={{ display: 'flex', height: '25%', float: 'right', width: '100%', justifyContent: "flex-end" }}>  <p style={{
+                    <div className="Ld">
+                        <p style={{ display: 'flex', height: '25%', width: '100%', justifyContent: "flex-end" }}>  
+                        <p style={{
                         marginRight: '20%',
                         borderBottom: '2px solid red', height: '100%', fontSize: '20px'
-                    }}
-                    >HOBBIES</p><button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                        }}
+                        >
+                        LANGUAGES
+                        </p>
+                        <button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                         <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px!important' }}>Add</button></p>
-                        <div style={{ width: '100%', height: '50%', display: "flex", justifyContent: 'center' }}>
-                            <span style={{ display: 'flex', msFlexDirection: 'column', width: '20%', height: '62%' }}><FileCopyIcon />Reading</span>
-                            <span style={{ display: 'flex', msFlexDirection: 'column', width: '20%', height: '62%' }}>  <SportsBasketballIcon />Basketball</span>
-                            <span style={{ display: 'flex', msFlexDirection: 'column', width: '20%', height: '62%' }}>  <DirectionsRunIcon />Hiking</span>
-                            <span style={{ display: 'flex', msFlexDirection: 'column', width: '20%', height: '62%' }}>  <MusicNoteIcon />Music</span>
+                        <div style={{ width: '100%', height: '60%', display: "flex", flexWrap:'wrap', justifyContent:'space-between', overflowY:'auto', paddingLeft:20, paddingRight:20  }}>
+                            <div style={{ display: 'flex', width: '50%', height: '42%', alignItems:'center', justifyContent:'space-around' }}>
+                                Reading 
+                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'50%'}}/> 
+                            </div>
+                            <div style={{ display: 'flex', width: '50%', height: '42%', alignItems:'center', justifyContent:'space-around' }}>
+                                Reading 
+                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'50%'}}/> 
+                            </div>
+                            <div style={{ display: 'flex', width: '50%', height: '42%', alignItems:'center', justifyContent:'space-around' }}>
+                                Reading 
+                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'50%'}}/> 
+                            </div>
                         </div></div>
                     {/* <p style={{display:'flex',justifyContent: 'flex-end'}}><button style={{backgroundColor:"red",borderBottomLeftRadius:'3px',borderTopLeftRadius:'3px'}}>Edit</button>
                    <button style={{backgroundColor:"rgb(74, 75, 79)",borderBottomRightRadius:'3px',borderTopRightRadius:'3px'}}>Add</button></p> */}
