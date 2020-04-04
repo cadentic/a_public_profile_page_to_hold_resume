@@ -265,19 +265,19 @@ const Headerbottom = () => {
                         <div style={{ width: '100%', height: '25%' }}>
                             <p style={{ fontSize: '13px', color: 'red', lineHeight: '10px' }}>WEB DESIGN</p>
                             <div class="timeline">
-                                <div class="container left">
+                                <div class="container">
 
                                 </div>
-                                <div class="container right">
+                                <div class="container">
 
                                 </div>
-                                <div class="container left">
+                                <div class="container">
 
                                 </div>
-                                <div class="container right">
+                                <div class="container">
 
                                 </div>
-                                <div class="container left" style={{ backgroundColor: 'red!important' }}>
+                                <div class="container rating-unselect">
                                 </div>
 
                             </div>
@@ -388,15 +388,15 @@ const Headerbottom = () => {
                         <div style={{ width: '100%', height: '60%', display: "flex", flexWrap:'wrap', justifyContent:'space-between', overflowY:'auto', paddingLeft:20, paddingRight:20  }}>
                             <div style={{ display: 'flex', width: '50%', height: '42%', alignItems:'center', justifyContent:'space-around' }}>
                                 Reading 
-                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'50%'}}/> 
+                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'60%'}}/> 
                             </div>
                             <div style={{ display: 'flex', width: '50%', height: '42%', alignItems:'center', justifyContent:'space-around' }}>
                                 Reading 
-                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'50%'}}/> 
+                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'60%'}}/> 
                             </div>
                             <div style={{ display: 'flex', width: '50%', height: '42%', alignItems:'center', justifyContent:'space-around' }}>
                                 Reading 
-                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'50%'}}/> 
+                                <LinearProgress variant="determinate" value={60} color="secondary" style={{width:'60%'}}/> 
                             </div>
                         </div></div>
                     {/* <p style={{display:'flex',justifyContent: 'flex-end'}}><button style={{backgroundColor:"red",borderBottomLeftRadius:'3px',borderTopLeftRadius:'3px'}}>Edit</button>
