@@ -12,9 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import FilterCenterFocusIcon from '@material-ui/icons/FilterCenterFocus';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import AnalysisChart from '../Charts/Analysis';
 import StatisticsChart from '../Charts/Statistics';
 import RadarChart from '../Charts/Radar';
@@ -30,6 +27,25 @@ const CharSectionTwo = styled.section`
     display: flex;
     flex-direction:row;
     padding:10px; 
+`
+const SkillIndicatorOuter = styled.div`
+    padding: 2px;
+    border: 2px solid white;
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+    z-index: 999;
+`
+
+const SkillIndicatorInner = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: rgb(253, 251, 249);
+    border-radius: 50%;
+    ${props => props.red && css`
+        background-color: red !important;
+        z-index: 999;
+    `}
 `
 
 const Headerbottom = () => {
@@ -90,13 +106,13 @@ const Headerbottom = () => {
 
     const [skills, setSkills] = useState([{
         name: 'Web Design',
-        skillLevel: 3,
+        skillLevel: 4,
     },{
         name: 'Graphic Design',
         skillLevel: 5,
     },{
         name: 'UI Design',
-        skillLevel: 4,
+        skillLevel: 3,
     },
     ])
 
@@ -224,8 +240,6 @@ const Headerbottom = () => {
                                 <p style={{ fontSize: '10px', textAlign: 'left' }}>{entry.description}</p>
                             </Box>
                         )}
-
-
                     </Grid>
                 </div>
 
@@ -312,20 +326,31 @@ const Headerbottom = () => {
                                 <p style={{ fontSize: '13px', color: 'red', lineHeight: '10px' }}>{skill.name}</p>
                                 <div class="timeline">
                                     <div class={skill.skillLevel>=1? "container" : "container rating-unselect"}>
-
+                                        <SkillIndicatorOuter>
+                                            <SkillIndicatorInner red={skill.skillLevel<1} />
+                                        </SkillIndicatorOuter>
                                     </div>
                                     <div class={skill.skillLevel>=2? "container" : "container rating-unselect"}>
-
+                                        <SkillIndicatorOuter>
+                                            <SkillIndicatorInner red={skill.skillLevel<2} />
+                                        </SkillIndicatorOuter>
                                     </div>
                                     <div class={skill.skillLevel>=3? "container" : "container rating-unselect"}>
-
+                                        <SkillIndicatorOuter>
+                                            <SkillIndicatorInner red={skill.skillLevel<3} />
+                                        </SkillIndicatorOuter>
                                     </div>
                                     <div class={skill.skillLevel>=4? "container" : "container rating-unselect"}>
-
+                                        <SkillIndicatorOuter>
+                                            <SkillIndicatorInner red={skill.skillLevel<4} />
+                                        </SkillIndicatorOuter>
                                     </div>
                                     <div class={skill.skillLevel>=5? "container" : "container rating-unselect"}>
+                                        <SkillIndicatorOuter>
+                                            <SkillIndicatorInner red={skill.skillLevel<5} />
+                                        </SkillIndicatorOuter>
                                     </div>
-
+                                    <div className='skills-dash'></div>
                                 </div>
                             </div>
                         ))}
@@ -355,7 +380,7 @@ const Headerbottom = () => {
                 </p>
 
             </section>
-            <section style={{ width: '100%', height: '320px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', padding: '10px' }}>
+            <section style={{ width: '100%', height: '320px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', padding: '10px' }}>
 
                 <div className="Tow">
 
@@ -400,7 +425,7 @@ const Headerbottom = () => {
                 </div>
 
             </section>
-            <section style={{ width: '100%', height: '260px', marginTop: '20px', display: 'flex', justifyContent: 'center', padding: '10px', marginBottom: 15 }}>
+            <section style={{ width: '100%', height: '260px', display: 'flex', justifyContent: 'center', padding: '10px', marginBottom: 15 }}>
                 <Links />
             </section>
         </div>
