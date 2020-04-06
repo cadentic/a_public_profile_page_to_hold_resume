@@ -44,12 +44,21 @@ export default function EditWork(props) {
                             />
                             <TextField
                                 margin="dense"
-                                name='companyName'
-                                label="Company Name"
+                                name='collegeName'
+                                label="College Name"
                                 type="text"
                                 fullWidth
                                 onChange={(e)=>{handleOnChange(e,index)}}
-                                value={entry.companyName}
+                                value={entry.collegeName}
+                            />
+                            <TextField
+                                margin="dense"
+                                name='grade'
+                                label="Grade"
+                                type="text"
+                                fullWidth
+                                onChange={(e)=>{handleOnChange(e,index)}}
+                                value={entry.grade}
                             />
                             <TextField
                                 margin="dense"
@@ -80,6 +89,7 @@ export default function EditWork(props) {
                                 value={entry.description}
 
                             />
+                            <div style={{marginBottom:30}}></div>
                         </>
                     ))}
 

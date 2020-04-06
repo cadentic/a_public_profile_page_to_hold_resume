@@ -91,6 +91,23 @@ const Headerbottom = () => {
     }
     ])
 
+    const [education, setEducation] = useState([{
+        title: 'Visual Designer',
+        collegeName: 'Art School',
+        grade:'S1+',
+        from: '2016',
+        to: '2017',
+        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
+    }, {
+        title: 'Product Designer',
+        collegeName: 'Design University',
+        grade:'B1+',
+        from: '2016',
+        to: '2017',
+        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
+    },
+    ])
+
     const [workExp, setWorkExp] = useState([{
         title: 'Graphic Designer',
         companyName: 'Company Name',
@@ -260,29 +277,25 @@ const Headerbottom = () => {
                         <div className='BotLd'>
                             <label style={{ display: 'flex', alignItems: 'center', height: '20px', width: '100%', fontSize: '15px' }}>
                                 <label style={{ width: '10px', height: '10px', borderRadius: '100%', backgroundColor: '#fff', marginRight: '10px' }}></label>
-                                <h4 style={{ fontSize: '14px', width: '75%', height: 'auto' }}>ART SCHOOL</h4>
-                    GRADE<p style={{ width: '10%', height: '30px', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff', marginTop: '20px' }}>S1+</p>
+                                <h4 style={{ fontSize: '14px', width: '75%', height: 'auto' }}> {education[0].collegeName} </h4>
+                                 GRADE
+                                <p style={{ width: '10%', height: '30px', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff', marginTop: '20px' }}> {education[0].grade} </p>
                             </label>
                             <span style={{ paddingLeft: '15px' }}>
-                                <p style={{ width: '100%', fontSize: '15px ' }}>2013 - 2015 | VISUAL DESIGNER</p>
-                                <p>Lorem ipsum dolor sit amet, an est blandit concludaturque,
-                                ex mazim senserit abhorreant cum. Aeque sonet
-                                nostrum usu te. Has ex cibo commodo, ea suas reque
-                    justo eam.</p>
+                                <p style={{ width: '100%', fontSize: '15px ' }}> {education[0].form + " - "+education[0].to+" | "+education[0].title} </p>
+                                <p> {education[0].description} </p>
                             </span>
                         </div>
                         <div className='Botrd'>
                             <label style={{ display: 'flex', alignItems: 'center', height: '20px', width: '100%', fontSize: '15px' }}>
                                 <label style={{ width: '10px', height: '10px', borderRadius: '100%', backgroundColor: '#fff', marginRight: '10px' }}></label>
-                                <h4 style={{ fontSize: '14px', width: '75%', height: 'auto' }}>DESIGN UNIVERSITY</h4>
-                    GRADE<p style={{ width: '10%', height: '30px', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff', marginTop: '20px' }}>B1+</p>
+                                <h4 style={{ fontSize: '14px', width: '75%', height: 'auto' }}> {education[1].collegeName} </h4>
+                            GRADE
+                    <p style={{ width: '10%', height: '30px', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff', marginTop: '20px' }}>{education[0].grade}</p>
                             </label>
                             <span style={{ paddingLeft: '15px' }}>
-                                <p style={{ width: '100%', fontSize: '15px ' }}>2015 - 2018 | PRODUCT DESIGNER</p>
-                                <p>Lorem ipsum dolor sit amet, an est blandit concludaturque,
-                                ex mazim senserit abhorreant cum. Aeque sonet
-                                nostrum usu te. Has ex cibo commodo, ea suas reque
-                    justo eam.</p>
+                                <p style={{ width: '100%', fontSize: '15px ' }}>  {education[1].form + " - "+education[1].to+" | "+education[1].title} </p>
+                                <p> {education[1].description} </p>
                             </span>
                         </div>
                     </div>
@@ -446,9 +459,9 @@ const Headerbottom = () => {
             />
             <EditEducation
                 handleClose={()=>{setOpenedEditor('none')}}
-                handleDataSubmit={setWorkExp}
+                handleDataSubmit={setEducation}
                 open={openedEditor==='education'}
-                init={workExp}
+                init={education}
             />
             <EditWork
                 handleClose={()=>{setOpenedEditor('none')}}
