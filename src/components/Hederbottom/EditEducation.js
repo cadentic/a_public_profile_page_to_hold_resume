@@ -4,6 +4,11 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
+import handler from '../../apiHandler';
+
+export const getCategories = async () => {
+    return handler.get('/categories');
+}
 
 export default function EditWork(props) {
 
@@ -20,7 +25,11 @@ export default function EditWork(props) {
         props.handleClose()
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
+        //send update request to backend.
+        //if you want to show loading await on below call.
+        handler.post('/update/education', formData)
+
         props.handleDataSubmit(formData)
         props.handleClose()
     }
@@ -33,7 +42,7 @@ export default function EditWork(props) {
                     {formData.map((entry, index) => (
                         <>
                             <TextField
-                                autoFocus
+                                autoFocus={index===0}
                                 margin="dense"
                                 name='title'
                                 label="Title"

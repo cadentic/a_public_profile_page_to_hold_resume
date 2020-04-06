@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
+import handler from '../../apiHandler';
 
 export default function EditProfile(props) {
 
@@ -20,7 +21,10 @@ export default function EditProfile(props) {
         props.handleClose()
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
+        //send update request to backend.
+        //if you want to show loading await on below call.
+        handler.post('/update/education', formData)
         props.handleDataSubmit(formData)
         props.handleClose()
     }

@@ -55,6 +55,15 @@ const SkillIndicatorInner = styled.div`
     `}
 `
 
+const Timeline = styled.div`
+    position:absolute;
+    width:800px;
+    height:20px;
+    border-radius:10px;
+    border: 2px solid red;
+    top:885px;
+`
+
 const Headerbottom = () => {
 
     const [personalData, setPersonalData] = useState({
@@ -75,18 +84,23 @@ const Headerbottom = () => {
 
     const [timeline, setTimeline] = useState([{
         icon: 'center_focus_strong',
+        year: '2009',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'sports_basketball',
+        year: '2011',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'flight',
+        year: '2015',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'location_on',
+        year: '2016',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'contacts',
+        year: '2019',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }
     ])
@@ -95,8 +109,8 @@ const Headerbottom = () => {
         title: 'Visual Designer',
         collegeName: 'Art School',
         grade:'S1+',
-        from: '2016',
-        to: '2017',
+        from: '2011',
+        to: '2014',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
     }, {
         title: 'Product Designer',
@@ -234,11 +248,7 @@ const Headerbottom = () => {
                 <div className="prag">
                     <br></br>
                     <h3 style={{ fontSize: '18px', lineHeight: '20px' }}>PERSONAL INFORMATION</h3>
-                    <p className="pr"> Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant
-                    cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque
-                    justo eam. Vel errem viderer saperet cu, modo nihil an cum. Per in falli utroque,
-                    duo ut inani movet, eam eu mundi lucilius consulatu
-                    </p>
+                    <p className="pr"> {personalData.description} </p>
                 </div>
 
             </div>
@@ -252,12 +262,15 @@ const Headerbottom = () => {
                         </div>
                     </div>
                     <Grid container className="grigM">
+                        <Timeline/>
                         {timeline.map((entry, index) =>
                             <Box className="Box"
                                 m={1}
                                 p={1}
                                 style={{ width: '9rem', height: '10rem', textAlign: 'center' }}>
-                                <span className='inst'> <Icon fontSize="small" style={{ fontSize: 35 }}>{entry.icon}</Icon></span>
+                                <div style={{backgroundColor:'red', width:60, borderRadius:8}}> {entry.year} </div>
+                                <div className='arrow_box'></div>
+                                <span className='inst' style={{marginTop:60}}> <Icon fontSize="small" style={{ fontSize: 45}}>{entry.icon}</Icon></span>
                                 <p style={{ fontSize: '10px', textAlign: 'left' }}>{entry.description}</p>
                             </Box>
                         )}
@@ -282,7 +295,7 @@ const Headerbottom = () => {
                                 <p style={{ width: '10%', height: '30px', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff', marginTop: '20px' }}> {education[0].grade} </p>
                             </label>
                             <span style={{ paddingLeft: '15px' }}>
-                                <p style={{ width: '100%', fontSize: '15px ' }}> {education[0].form + " - "+education[0].to+" | "+education[0].title} </p>
+                                <p style={{ width: '100%', fontSize: '15px ' }}> {education[0].from + " - "+education[0].to+" | "+education[0].title} </p>
                                 <p> {education[0].description} </p>
                             </span>
                         </div>
@@ -294,7 +307,7 @@ const Headerbottom = () => {
                     <p style={{ width: '10%', height: '30px', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff', marginTop: '20px' }}>{education[0].grade}</p>
                             </label>
                             <span style={{ paddingLeft: '15px' }}>
-                                <p style={{ width: '100%', fontSize: '15px ' }}>  {education[1].form + " - "+education[1].to+" | "+education[1].title} </p>
+                                <p style={{ width: '100%', fontSize: '15px ' }}>  {education[1].from + " - "+education[1].to+" | "+education[1].title} </p>
                                 <p> {education[1].description} </p>
                             </span>
                         </div>

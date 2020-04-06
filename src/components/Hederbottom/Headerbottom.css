@@ -248,7 +248,6 @@ section {
 .grigM {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
 }
 
@@ -527,6 +526,31 @@ section {
     display: flex;
 }
 
-.rating-unselect::after {
-    background-color: red;
+
+.arrow_box {
+	position: relative;
+	background: 'red';
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: red;
+	border-width: 5px;
+	margin-left: -5px;
+}
+.arrow_box:before {
+	border-color: rgba(245, 71, 51, 0);
+	border-top-color: 'red';
+	border-width: 11px;
+	margin-left: -11px;
 }
