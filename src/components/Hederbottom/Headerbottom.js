@@ -19,6 +19,13 @@ import StatTable from '../Charts/StatTable';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Links from '../Links/Links';
 import Icon from '@material-ui/core/Icon';
+import EditProfile from './EditProfile';
+import EditTimeline from './EditTimeline';
+import EditWork from './EditWorkExperience';
+import EditProject from './EditProjectDesc';
+import EditHobbies from './EditHobbies';
+import EditLanguages from './EditLanguages';
+import EditEducation from './EditEducation';
 
 const CharSectionTwo = styled.section`
     width: 100%;
@@ -68,23 +75,18 @@ const Headerbottom = () => {
 
     const [timeline, setTimeline] = useState([{
         icon: 'center_focus_strong',
-        date: '2010--1-23',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'sports_basketball',
-        date: '2011-11-03',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'flight',
-        date: '2011-12-30',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'location_on',
-        date: '2013-5-25',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }, {
         icon: 'contacts',
-        date: '2015-6-17',
         description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
     }
     ])
@@ -155,6 +157,8 @@ const Headerbottom = () => {
     },
     ])
 
+    const [openedEditor, setOpenedEditor] = useState('none')
+
     return (
         <div>
             <div className="Maindiv" style={{ maxwidth: '99%', height: "180px", display: 'flex', flexDirection: 'row' }}>
@@ -167,7 +171,7 @@ const Headerbottom = () => {
 
                             <td></td>
                             <td className="bottonD">
-                                <button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                                <button onClick={()=>{setOpenedEditor('profile')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                                 <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button>
                             </td>
 
@@ -226,7 +230,7 @@ const Headerbottom = () => {
                     <div className="TopD1">
                         <div className="TopR">
                             <h5>TIMELINE</h5>
-                            <p><button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                            <p><button onClick={()=>{setOpenedEditor('timeline')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                                 <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
                         </div>
                     </div>
@@ -247,7 +251,7 @@ const Headerbottom = () => {
                     <div className="TopD1">
                         <div className="TopR1">
                             <h5 style={{ borderBottom: '2px solid gray', width: '50%', height: 'auto', textAlign: 'center', paddingBottom: '20px' }}>EDUCATION</h5>
-                            <p><button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                            <p><button onClick={()=>{setOpenedEditor('education')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                                 <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
 
                         </div>
@@ -289,7 +293,7 @@ const Headerbottom = () => {
                 <div className="ToplD">
                     <div className="ToplD1">
                         <div className="ToplD2">
-                            <p style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}><button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                            <p style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>< button onClick={()=>{setOpenedEditor('work')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                                 <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
                             <h5 style={{ borderBottom: '2px solid gray', width: '90%', height: 'auto', color: 'tomato' }}>WORK EXPERIENCE</h5>
                             <div style={{ width: '90%', display: 'flex', height: '50%' }}>
@@ -372,7 +376,7 @@ const Headerbottom = () => {
 
                 <div className="OnR">
                     <h2 className="h5" style={{ borderBottom: '2px solid gray' }}>Project Descriptions</h2>
-                    <p style={{ display: 'flex', justifyContent: 'flex-end' }}><button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                    <p style={{ display: 'flex', justifyContent: 'flex-end' }}><button onClick={()=>{setOpenedEditor('project')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                         <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
                 </div>
                 <p style={{ color: "#fff" }} ><FilterCenterFocusIcon style={{ width: "40px", height: "40px", marginRight: "10px" }} />
@@ -390,7 +394,7 @@ const Headerbottom = () => {
                             marginRight: '20%',
                             borderBottom: '2px solid red', height: '100%', fontSize: '20px'
                         }}
-                        >HOBBIES</p><button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                        >HOBBIES</p><button onClick={()=>{setOpenedEditor('hobbies')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                             <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px!important' }}>Add</button></p>
                         <div style={{ width: '100%', height: '50%', display: "flex", justifyContent: 'center' }}>
                             {hobbies.map((hobby,i)=>(
@@ -409,7 +413,7 @@ const Headerbottom = () => {
                             >
                                 LANGUAGES
                         </p>
-                            <button style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
+                            <button onClick={()=>{setOpenedEditor('languages')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                             <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px!important' }}>Add</button></p>
                         <div style={{ width: '100%', height: '60%', display: "flex", flexWrap: 'wrap', justifyContent: 'space-between', overflowY: 'auto', paddingLeft: 20, paddingRight: 20 }}>
                             {languages.map((lang,i)=>(
@@ -428,6 +432,48 @@ const Headerbottom = () => {
             <section style={{ width: '100%', height: '260px', display: 'flex', justifyContent: 'center', padding: '10px', marginBottom: 15 }}>
                 <Links />
             </section>
+            <EditProfile
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setPersonalData}
+                open={openedEditor==='profile'}
+                init={personalData}
+            />
+            <EditTimeline
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setTimeline}
+                open={openedEditor==='timeline'}
+                init={timeline}
+            />
+            <EditEducation
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setWorkExp}
+                open={openedEditor==='education'}
+                init={workExp}
+            />
+            <EditWork
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setWorkExp}
+                open={openedEditor==='work'}
+                init={workExp}
+            />
+            <EditProject
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setProjectDesc}
+                open={openedEditor==='project'}
+                init={projectDesc}
+            />
+            <EditHobbies
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setHobbies}
+                open={openedEditor==='hobbies'}
+                init={hobbies}
+            />
+            <EditLanguages
+                handleClose={()=>{setOpenedEditor('none')}}
+                handleDataSubmit={setLanguages}
+                open={openedEditor==='languages'}
+                init={languages}
+            />
         </div>
     )
 };
