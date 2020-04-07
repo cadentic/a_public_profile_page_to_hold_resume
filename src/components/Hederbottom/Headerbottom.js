@@ -65,7 +65,7 @@ const Timeline = styled.div`
     top:885px;
 `
 
-const Headerbottom = () => {
+const Headerbottom = (props) => {
 
     const [personalData, setPersonalData] = useState(data.profile)
 
@@ -91,7 +91,7 @@ const Headerbottom = () => {
                 <div className="imeagediv">
                     <img className="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-fjqTHWrNpg6S8k34ZUQgH2GKUrpPMkwEWI41ykc1d0VagO8S" alt="mdsaif"></img>
                 </div>
-                <div className="Containtdiv" style={{ display: 'flex', flexDirection: 'column', }}>
+                <div  className="Containtdiv" style={{ display: 'flex', flexDirection: 'column', }}>
                     <table style={{ height: '100%' }}>
                         <tr>
 
@@ -107,7 +107,7 @@ const Headerbottom = () => {
                                 <div className="Icondiv"><CallIcon fontSize="small" style={{ backgroundColor: 'red', borderRadius: '100%', fontSize: '30px', padding: '5px' }} /> {personalData.telephone} </div>
                             </td>
 
-                            <td style={{ height: '50px', width: '30px' }}>
+                            <td ref={props.profileRef} style={{ height: '50px', width: '30px' }}>
                                 <div className="Icondiv"><MailIcon fontSize="small" style={{ backgroundColor: 'red', borderRadius: '100%', fontSize: '30px', padding: '5px', }} /> {personalData.email} </div>
                             </td>
 
@@ -151,7 +151,7 @@ const Headerbottom = () => {
                 <div className="TopD">
                     <div className="TopD1">
                         <div className="TopR">
-                            <h5>TIMELINE</h5>
+                            <h5 ref={props.timelineRef}>TIMELINE</h5>
                             <p><button onClick={()=>{setOpenedEditor('timeline')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                                 <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
                         </div>
@@ -175,7 +175,7 @@ const Headerbottom = () => {
                 <div className="BotD">
                     <div className="TopD1">
                         <div className="TopR1">
-                            <h5 style={{ borderBottom: '2px solid gray', width: '50%', height: 'auto', textAlign: 'center', paddingBottom: '20px' }}>EDUCATION</h5>
+                            <h5 ref={props.educationRef} style={{ borderBottom: '2px solid gray', width: '50%', height: 'auto', textAlign: 'center', paddingBottom: '20px' }}>EDUCATION</h5>
                             <p><button onClick={()=>{setOpenedEditor('education')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                                 <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
 
@@ -211,7 +211,7 @@ const Headerbottom = () => {
             </section>
             <section style={{ width: '100%', height: '300px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 
-                <div className="ToplD">
+                <div ref={props.workRef} className="ToplD">
                     <div className="ToplD1">
                         <div className="ToplD2">
                             <p style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>< button onClick={()=>{setOpenedEditor('work')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
@@ -296,7 +296,7 @@ const Headerbottom = () => {
             <section className="sec" style={{ width: '100%', height: '300px', marginTop: '20px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', padding: '10px' }}>
 
                 <div className="OnR">
-                    <h2 className="h5" style={{ borderBottom: '2px solid gray' }}>Project Descriptions</h2>
+                    <h2 ref={props.projectRef} className="h5" style={{ borderBottom: '2px solid gray' }}>Project Descriptions</h2>
                     <p style={{ display: 'flex', justifyContent: 'flex-end' }}><button onClick={()=>{setOpenedEditor('project')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                         <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
                 </div>
@@ -315,6 +315,7 @@ const Headerbottom = () => {
                             marginRight: '20%',
                             borderBottom: '2px solid red', height: '100%', fontSize: '20px'
                         }}
+                        ref={props.hobbiesRef}
                         >HOBBIES</p><button onClick={()=>{setOpenedEditor('hobbies')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                             <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px!important' }}>Add</button></p>
                         <div style={{ width: '100%', height: '50%', display: "flex", justifyContent: 'center' }}>

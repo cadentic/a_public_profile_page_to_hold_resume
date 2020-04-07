@@ -66,8 +66,9 @@ function App(props) {
   const [isChatVisible, setIsChatVisible ] = useState(false)
   const [sideBarOpen, setSideBarOpen]  =useState(false)
   const [videoVisible, setVideoVisible] = useState(true)
+
   useScrollPosition(({ prevPos, currPos }) => {
-    if(currPos.y<-160){
+    if(currPos.y<-150){
       setVideoVisible(false)
     }else{
       setVideoVisible(true)
@@ -84,7 +85,7 @@ function App(props) {
       <Wrapper bodyOuter>
         <SideBar />
         <Wrapper sideBarOpen={sideBarOpen}  bodyInner>
-          {<Header1 showMenu={!videoVisible} />}
+          {<Header1  sideBarOpen={sideBarOpen} showMenu={!videoVisible} />}
         </Wrapper>
         <SideBar />
         <ChatViewWrapper hidden={!isChatVisible}>
