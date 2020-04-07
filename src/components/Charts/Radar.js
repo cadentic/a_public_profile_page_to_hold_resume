@@ -7,6 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
+import data from '../../data/data'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,50 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RadarCOmponent() {
     const classes = useStyles();
-    const [data, setData] = useState([
-        {
-          "subject": "HTML",
-          "A": 120,
-          "B": 110,
-          "fullMark": 150
-        },
-        {
-          "subject": "JAVA",
-          "A": 98,
-          "B": 130,
-          "fullMark": 150
-        },
-        {
-          "subject": "CSS",
-          "A": 86,
-          "B": 130,
-          "fullMark": 150
-        },
-        {
-          "subject": "PSD",
-          "A": 99,
-          "B": 100,
-          "fullMark": 150
-        },
-        {
-          "subject": "Designing",
-          "A": 85,
-          "B": 90,
-          "fullMark": 150
-        },
-        {
-          "subject": "UX",
-          "A": 95,
-          "B": 55,
-          "fullMark": 150
-        },
-        {
-            "subject": "UI",
-            "A": 85,
-            "B": 45,
-            "fullMark": 150
-        }
-      ])
+    const [chartData, setData] = useState(data.radar)
     return (
         <Card style={{borderRadius:30}} className={classes.root}>
             <CardHeader
@@ -91,7 +50,7 @@ export default function RadarCOmponent() {
             />
             <CardContent style={{color:'white', paddingTop:0}}>
 
-                <RadarChart  outerRadius={90} width={600} height={280} data={data}>
+                <RadarChart  outerRadius={90} width={600} height={280} data={chartData}>
                     {/* <PolarGrid /> */}
                     <PolarAngleAxis dataKey="subject" tick={{ fill: 'white' }} />
                     <Radar name="Last Month" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />

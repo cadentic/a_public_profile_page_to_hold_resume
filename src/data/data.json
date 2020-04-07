@@ -104,5 +104,109 @@
     },{
         "name": "German",
         "skillLevel": 42
-    }]
+    }],
+
+    "analysis":[
+        {
+            "name": "UI Design",
+            "value": 35
+        },
+        {
+            "name": "UX Design",
+            "value": 45
+        },
+        {
+            "name": "Code",
+            "value": 20
+        }
+    ],
+
+    "radar":[
+        {
+          "subject": "HTML",
+          "A": 120,
+          "B": 110,
+          "fullMark": 150
+        },
+        {
+          "subject": "JAVA",
+          "A": 98,
+          "B": 130,
+          "fullMark": 150
+        },
+        {
+          "subject": "CSS",
+          "A": 86,
+          "B": 130,
+          "fullMark": 150
+        },
+        {
+          "subject": "PSD",
+          "A": 99,
+          "B": 100,
+          "fullMark": 150
+        },
+        {
+          "subject": "Designing",
+          "A": 85,
+          "B": 90,
+          "fullMark": 150
+        },
+        {
+          "subject": "UX",
+          "A": 95,
+          "B": 55,
+          "fullMark": 150
+        },
+        {
+            "subject": "UI",
+            "A": 85,
+            "B": 45,
+            "fullMark": 150
+        }
+    ],
+
+    "stats":{
+        "year":[
+            {
+                "name": "Jan",
+                "uv": 4000,
+                "pv": 2400,
+                "amt": 2400
+            },
+            {
+                "name": "Feb",
+                "uv": 3000,
+                "pv": 1398,
+                "amt": 2210
+            },
+            {
+                "name": "March",
+                "uv": 2000,
+                "pv": 9800,
+                "amt": 2290
+            },
+            {
+                "name": "April",
+                "uv": 2780,
+                "pv": 3908,
+                "amt": 2000
+            },
+            {
+                "name": "Jul",
+                "uv": 1890,
+                "pv": 4800,
+                "amt": 2181
+            }
+        ],
+        "month":[{"name":0,"uv":1000,"pv":279,"amt":1777},{"name":1,"uv":1217,"pv":1516,"amt":1230},{"name":2,"uv":537,"pv":454,"amt":1719},{"name":3,"uv":679,"pv":973,"amt":979},{"name":4,"uv":1523,"pv":56,"amt":874},{"name":5,"uv":866,"pv":1679,"amt":1805},{"name":6,"uv":38,"pv":1969,"amt":390},{"name":7,"uv":1053,"pv":1682,"amt":890},{"name":8,"uv":864,"pv":1950,"amt":1780},{"name":9,"uv":1415,"pv":933,"amt":999},{"name":10,"uv":1505,"pv":1677,"amt":1496},{"name":11,"uv":1596,"pv":248,"amt":829},{"name":12,"uv":1084,"pv":1338,"amt":485},{"name":13,"uv":1408,"pv":943,"amt":1097},{"name":14,"uv":1515,"pv":442,"amt":681},{"name":15,"uv":126,"pv":277,"amt":220},{"name":16,"uv":1733,"pv":649,"amt":480},{"name":17,"uv":1106,"pv":614,"amt":1480},{"name":18,"uv":1515,"pv":1921,"amt":1582},{"name":19,"uv":646,"pv":91,"amt":233},{"name":20,"uv":1349,"pv":904,"amt":1172},{"name":21,"uv":862,"pv":315,"amt":1770},{"name":22,"uv":1407,"pv":126,"amt":952},{"name":23,"uv":1678,"pv":1600,"amt":99},{"name":24,"uv":1893,"pv":900,"amt":1895},{"name":25,"uv":518,"pv":1582,"amt":1505},{"name":26,"uv":175,"pv":44,"amt":1348},{"name":27,"uv":1,"pv":1630,"amt":650},{"name":28,"uv":368,"pv":919,"amt":1369},{"name":29,"uv":161,"pv":905,"amt":995},{"name":30,"uv":282,"pv":1109,"amt":1618}],
+        "week":[{"name":"Mon","uv":1743,"pv":1207,"amt":1526},{"name":"Tue","uv":1506,"pv":982,"amt":517},{"name":"Wed","uv":237,"pv":1120,"amt":1738},{"name":"Thurs","uv":767,"pv":37,"amt":457},{"name":"Fri","uv":1384,"pv":643,"amt":1227},{"name":"Sat","uv":1102,"pv":1752,"amt":472},{"name":"Sun","uv":1332,"pv":1473,"amt":677}]
+    },
+
+    "tableRows":[
+        {"id": "id00122", "project": "Dashboard design", "status": "In-progress"},
+        {"id": "id00123", "project": "IOS App", "status": "Cancelled"},
+        {"id": "id00124", "project": "BMW Redesign", "status": "Testing"}
+    ]
+    
 }

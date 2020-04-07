@@ -12,6 +12,8 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import data from '../../data/data'
+
 
 
 const useStyles = makeStyles({
@@ -28,15 +30,7 @@ const useStyles = makeStyles({
     },
 });
 
-function createData(id, project, status) {
-    return { id, project, status };
-}
-
-const rows = [
-    createData('id00122','Dashboard design', 'In-progress'),
-    createData('id00123','IOS App', 'Cancelled'),
-    createData('id00124','BMW Redesign', 'Testing',)
-];
+const rows = data.tableRows;
 
 const getBackgroundColor = (status)=>{
     switch(status){

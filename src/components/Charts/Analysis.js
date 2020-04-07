@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { PieChart, Pie, Legend, Cell } from 'recharts';
+import data from '../../data/data'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,23 +38,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function RecipeReviewCard() {
+export default function Analysis() {
     const classes = useStyles();
     const colors = ['#8884d8', '#f5f5f5', '#82ca9d', 'yello', 'pink', 'green', 'grey']
-    const [chartData, setChartData] = useState([
-        {
-            "name": "UI Design",
-            "value": 35
-        },
-        {
-            "name": "UX Design",
-            "value": 45
-        },
-        {
-            "name": "Code",
-            "value": 20
-        },
-    ])
+    const [chartData, setChartData] = useState(data.analysis)
 
     return (
         <Card className={classes.root} elevation={0} >

@@ -15,14 +15,11 @@ class Editor extends Component {
                     } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        console.log( { event, editor, data } );
                         this.props.handleChange(data)
                     } }
                     onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
                     } }
                     onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
                     } }
                 />
             </div>

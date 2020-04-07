@@ -8,6 +8,8 @@ import { red } from '@material-ui/core/colors';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
 import { AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area } from 'recharts';
+import data from '../../data/data'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,61 +43,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const chartAllData = {
-    year:[
-        {
-            "name": "Jan",
-            "uv": 4000,
-            "pv": 2400,
-            "amt": 2400
-        },
-        {
-            "name": "Feb",
-            "uv": 3000,
-            "pv": 1398,
-            "amt": 2210
-        },
-        {
-            "name": "March",
-            "uv": 2000,
-            "pv": 9800,
-            "amt": 2290
-        },
-        {
-            "name": "April",
-            "uv": 2780,
-            "pv": 3908,
-            "amt": 2000
-        },
-        {
-            "name": "Jul",
-            "uv": 1890,
-            "pv": 4800,
-            "amt": 2181
-        },
-    ],
-    month:[...new Array(31)].map((val, i) => {
-        return {
-            'name':i,
-            'uv':Math.round(Math.random() * 2000),
-            'pv':Math.round(Math.random() * 2000),
-            'amt':Math.round(Math.random() * 2000),
-        }
-    }),
-    week:[...new Array(7)].map((val, i) => {
-        return {
-            'name':['Mon','Tue','Wed','Thurs','Fri', 'Sat', 'Sun'][i],
-            'uv':Math.round(Math.random() * 2000),
-            'pv':Math.round(Math.random() * 2000),
-            'amt':Math.round(Math.random() * 2000),
-        }
-    })
-}
+const chartAllData = data.stats
 
-export default function RecipeReviewCard() {
+export default function Statistics() {
     const classes = useStyles();
     const [window, setWindow] = useState('year')
-    const [chartData, setChartData] = useState(chartAllData['year'])
 
     return (
         <Card className={classes.root} elevation={0}>
