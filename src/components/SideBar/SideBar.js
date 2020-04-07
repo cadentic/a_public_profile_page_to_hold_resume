@@ -40,14 +40,14 @@ const Wrapper = styled.div`
     `}
 `;
 const BlueBar = styled.div`
-    width: 19px;
+    width: 5px;
     height: 100vh;
     background: #4169E1;
     margin-left: auto;
     z-index: 99;
     position: absolute;
     top: 0;
-    left: 252px;
+    left: 266px;
 `;
 
 // Render

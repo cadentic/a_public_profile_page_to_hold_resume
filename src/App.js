@@ -12,6 +12,10 @@ const Wrapper = styled.div`
     width: 100%;
     background: #4d4d4d;
     display:flex;
+    margin-left:0px;
+    transition-property: margin-left;
+    transition-duration:0.125s;
+    transition-timing-function: linear;
 
     ${props => props.bodyOuter && css`
       height: inherit;
@@ -23,6 +27,12 @@ const Wrapper = styled.div`
       height: inherit;
       width: 1236px;
       background: #20242C;
+    `}
+    ${props => props.sideBarOpen && css`
+      margin-left:210px;
+      transition-property: margin-left;
+      transition-duration:0.125s;
+      transition-timing-function: linear;
     `}
   `;
 const SideBar = styled.div`
@@ -52,13 +62,18 @@ const ChatViewWrapper = styled.div`
 function App(props) {
 
   const [isChatVisible, setIsChatVisible ] = useState(false)
+  const [sideBarOpen, setSideBarOpen]  =useState(false)
+
+  const toggleSidebarOpen = () => {
+    setSideBarOpen(!sideBarOpen)
+  }
 
   return (
     <StylesProvider injectFirst>
-      <Navbar />
+      <Navbar toggleSidebar={toggleSidebarOpen} />
       <Wrapper bodyOuter>
         <SideBar />
-        <Wrapper bodyInner>
+        <Wrapper sideBarOpen={sideBarOpen}  bodyInner>
           <Header1 />
         </Wrapper>
         <SideBar />

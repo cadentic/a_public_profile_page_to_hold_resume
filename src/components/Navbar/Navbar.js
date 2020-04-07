@@ -238,7 +238,9 @@ const Navbar = (props) => {
             <Wrapper>
             <Sdiv>
                 <IconButtonWrapper menuBig>
-                    <Wrapper sliderMenu onClick={() => setSliderDropdown(!sliderDropdown)}>
+                    <Wrapper sliderMenu onClick={() => {
+                        props.toggleSidebar()
+                        setSliderDropdown(!sliderDropdown)}}>
                         <MenuSlider fontSize="medium" />
                         <MenuArrow fontSize="small" rotateMenu={sliderDropdown} />
                     </Wrapper>

@@ -5,6 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import handler from '../../apiHandler';
+import  writeJsonFile from 'write-json-file';
 
 export default function EditProfile(props) {
 
@@ -25,6 +26,7 @@ export default function EditProfile(props) {
         //send update request to backend.
         //if you want to show loading await on below call.
         handler.post('/update/education', formData)
+        writeJsonFile('test.json', formData)
         props.handleDataSubmit(formData)
         props.handleClose()
     }
