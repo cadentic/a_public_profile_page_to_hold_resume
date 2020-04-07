@@ -26,6 +26,7 @@ import EditProject from './EditProjectDesc';
 import EditHobbies from './EditHobbies';
 import EditLanguages from './EditLanguages';
 import EditEducation from './EditEducation';
+import data from '../../data/data.json'
 
 const CharSectionTwo = styled.section`
     width: 100%;
@@ -66,127 +67,21 @@ const Timeline = styled.div`
 
 const Headerbottom = () => {
 
-    const [personalData, setPersonalData] = useState({
-        name: 'John Doe',
-        title: 'Art Director',
-        telephone: '1234567890',
-        email: 'yourname@mail.com',
-        address: 'no:2, Street Name, City name, P.O. Box',
-        website: 'www.yourwebsite.com',
-        description: `Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant
-        cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque
-        justo eam. Vel errem viderer saperet cu, modo nihil an cum. Per in falli utroque,
-        duo ut inani movet, eam eu mundi lucilius consulatu`,
-        twitterAccount: '@youtTwitter',
-        instaAccount: '@yourInsta',
-        otherAccount: '@yourAccount'
-    })
+    const [personalData, setPersonalData] = useState(data.profile)
 
-    const [timeline, setTimeline] = useState([{
-        icon: 'center_focus_strong',
-        year: '2009',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
-    }, {
-        icon: 'sports_basketball',
-        year: '2011',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
-    }, {
-        icon: 'flight',
-        year: '2015',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
-    }, {
-        icon: 'location_on',
-        year: '2016',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
-    }, {
-        icon: 'contacts',
-        year: '2019',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit',
-    }
-    ])
+    const [timeline, setTimeline] = useState(data.timeline)
 
-    const [education, setEducation] = useState([{
-        title: 'Visual Designer',
-        collegeName: 'Art School',
-        grade:'S1+',
-        from: '2011',
-        to: '2014',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
-    }, {
-        title: 'Product Designer',
-        collegeName: 'Design University',
-        grade:'B1+',
-        from: '2016',
-        to: '2017',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
-    },
-    ])
+    const [education, setEducation] = useState(data.education)
 
-    const [workExp, setWorkExp] = useState([{
-        title: 'Graphic Designer',
-        companyName: 'Company Name',
-        from: '2016',
-        to: '2017',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
-    }, {
-        title: 'Graphic Designer',
-        companyName: 'Company Name',
-        from: '2016',
-        to: '2017',
-        description: 'Lorem ipsum dolor sit amet, an est blandit concludaturque, ex mazim senserit abhorreant cum. Aeque sonet nostrum usu te. Has ex cibo commodo, ea suas reque justo eam.'
-    },
-    ])
+    const [workExp, setWorkExp] = useState(data.workExp)
 
-    const [skills, setSkills] = useState([{
-        name: 'Web Design',
-        skillLevel: 4,
-    },{
-        name: 'Graphic Design',
-        skillLevel: 5,
-    },{
-        name: 'UI Design',
-        skillLevel: 3,
-    },
-    ])
+    const [skills, setSkills] = useState(data.skills)
 
-    const [projectDesc, setProjectDesc] = useState(`Anyone has the ability to search for volunteer opportunities.If you would like to have the option to save the project
-    to review or apply to at a later date, or allow program/project sponsors to search for you based on your skill set, then
-    create a profile. Those who have already established a profile, can simply login using their
-    username and password.Anyone has the ability to search for volunteer opportunities.If you would like to have the option to save
-    the project opportunities
-    to review or apply to at a later date, or allow program/project sponsors to search for you based on your skill set, then you must
-    create a profile. Those who have already established a profile, can simply login using their
-    username and password.`)
+    const [projectDesc, setProjectDesc] = useState(data.projectDesc)
 
-    const [hobbies, setHobbies] = useState([{
-        icon: 'book',
-        name: 'Reading',
-    },{
-        icon: 'sports_basketball',
-        name: 'Basketball',
-    },{
-        icon: 'directions_walk',
-        name: 'Hiking',
-    },{
-        icon: 'music_video',
-        name: 'Music',
-    },
-    ])
+    const [hobbies, setHobbies] = useState(data.hobbies)
 
-    const [languages, setLanguages] = useState([{
-        name: 'English',
-        skillLevel: 80,
-    },{
-        name: 'French',
-        skillLevel: 65,
-    },{
-        name: 'Spanish',
-        skillLevel: 90,
-    },{
-        name: 'German',
-        skillLevel: 42,
-    },
-    ])
+    const [languages, setLanguages] = useState(data.languages)
 
     const [openedEditor, setOpenedEditor] = useState('none')
 
