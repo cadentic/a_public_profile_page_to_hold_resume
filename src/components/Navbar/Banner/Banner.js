@@ -12,10 +12,8 @@ import DownloadButton from './CustomButton';
 const Wrapper = styled.div`
     ${props => props.main && css`
         width: 100%;
-        height: 243px;
+        height: 225px;
         box-sizing: border-box;
-        border-top: 9px solid #ED1C24;
-        border-bottom: 9px solid #ED1C24;
         border-right: 9px solid #ED1C24;
         display: flex;
         @media screen and (max-width:800px){
@@ -25,7 +23,6 @@ const Wrapper = styled.div`
           border-top: 9px solid #ED1C24;
           border-bottom: 9px solid #ED1C24;
           border-right: 9px solid #ED1C24;
-          border-left: 9px solid #ED1C24;
           display: flex;
           flex-direction:column;
         }
@@ -401,7 +398,7 @@ const ImgHolder = styled.div`
         max-width: 45% !important;
         -webkit-box-flex: 2;
         flex-grow: 2;
-        cursor: pointer;;
+        cursor: pointer;
       }
 
       :before {
@@ -434,6 +431,8 @@ const Banner = (props) => {
     const dropdownVar = props.sliderDropdown;
 
     return (
+        <>
+        <div style={{height:9, backgroundColor:'red', width:'100%',marginTop:'75px'}}></div>
         <Wrapper main>
             <Wrapper push dropdown={dropdownVar} />
             <Wrapper banner>
@@ -483,6 +482,8 @@ const Banner = (props) => {
                 </ImgHolder>
             </Wrapper>
         </Wrapper>
+        <div style={{height:9, backgroundColor:'red', width:'100%'}}></div>
+        </>
     )
 }
 

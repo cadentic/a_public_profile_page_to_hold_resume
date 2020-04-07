@@ -5,7 +5,10 @@ import Navbar from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header1 from './components/Header/Header1';
 import ChatIcon from '@material-ui/icons/ChatBubbleOutline';
-import ChatView from './components/Chat/Chat'
+import ChatView from './components/Chat/Chat';
+
+import Banner from './components/Navbar/Banner/Banner'
+import SideBar2 from './components/SideBar/SideBar'
 
 // Styles
 const Wrapper = styled.div`
@@ -33,6 +36,7 @@ const Wrapper = styled.div`
       transition-property: margin-left;
       transition-duration:0.125s;
       transition-timing-function: linear;
+      width:80%;
     `}
   `;
 const SideBar = styled.div`
