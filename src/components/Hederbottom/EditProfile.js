@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import handler from '../../apiHandler';
+import Editor from '../Editor/Editor';
+import Typography from '@material-ui/core/Typography';
 
 export default function EditProfile(props) {
 
@@ -13,7 +15,7 @@ export default function EditProfile(props) {
     const handleOnChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.id]:e.target.value
+            [e.target.id]: e.target.value
         })
     }
 
@@ -31,8 +33,11 @@ export default function EditProfile(props) {
 
     return (
         <div>
-            <Dialog fullWidth={true} maxWidth={'sm'} open={props.open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogContent>
+            <Dialog
+                fullWidth={true} maxWidth={'sm'} open={props.open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogContent
+                    style={{paddingTop:50, overflowY:'auto', overflowX:'hidden'}}
+                >
                     <TextField
                         autoFocus
                         margin="dense"
@@ -117,16 +122,13 @@ export default function EditProfile(props) {
                         onChange={handleOnChange}
                         value={formData.otherAccount}
                     />
-                    <TextField
-                        margin="dense"
-                        id="description"
-                        label="Description"
-                        type="text"
-                        fullWidth
-                        multiline
-                        onChange={handleOnChange}
-                        value={formData.description}
-                    />
+                    <Typography variant="body2" display="block" gutterBottom>
+                        Description
+                    </Typography>
+                    <Editor data={formData.description} handleChange={(data)=>setFormData({
+                        ...formData,
+                        description:data
+                    })} />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">

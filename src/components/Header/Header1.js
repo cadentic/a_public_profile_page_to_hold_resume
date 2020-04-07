@@ -51,7 +51,7 @@ const Header1 = (props) => {
         <div style={{width:'100%'}}>
         <Nav activeKey="/home"
         hidden={!props.showMenu}
-        style={{backgroundColor:'#212529', position:'fixed', top:'75px', zIndex:9999, 
+        style={{backgroundColor:'#212529', position:'fixed', top:'75px', zIndex:99, 
         width: props.sideBarOpen? 1276 : 1235, }}
         >
         <Nav.Item>

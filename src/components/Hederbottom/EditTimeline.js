@@ -5,6 +5,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import handler from '../../apiHandler';
+import Editor from '../Editor/Editor';
+import Typography from '@material-ui/core/Typography';
 
 export default function EditTimeline(props) {
 
@@ -31,41 +33,39 @@ export default function EditTimeline(props) {
     return (
         <div>
             <Dialog fullWidth={true} maxWidth={'sm'} open={props.open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogContent>
+                <DialogContent style={{paddingTop:50, overflowY:'auto', overflowX:'hidden'}}>
 
                     {formData.map((entry, index) => (
                         <>
                             <TextField
-                                autoFocus={index===0}
+                                autoFocus={index === 0}
                                 margin="dense"
                                 name="year"
-                                label={`Item ${index+1} year`}
+                                label={`Item ${index + 1} year`}
                                 type="text"
                                 fullWidth
-                                onChange={(e)=>{handleOnChange(e,index)}}
+                                onChange={(e) => { handleOnChange(e, index) }}
                                 value={entry.year}
                             />
                             <TextField
                                 margin="dense"
                                 name='icon'
-                                label={`Item ${index+1} material icon name`}
+                                label={`Item ${index + 1} material icon name`}
                                 type="text"
                                 fullWidth
-                                onChange={(e)=>{handleOnChange(e,index)}}
+                                onChange={(e) => { handleOnChange(e, index) }}
                                 value={entry.icon}
                             />
-                            <TextField
-                                margin="dense"
-                                name="description"
-                                label={`Item ${index+1} description`}
-                                type="text"
-                                fullWidth
-                                multiline
-                                onChange={(e)=>{handleOnChange(e,index)}}
-                                value={entry.description}
-
-                            />
-                            <div style={{marginBottom:20, marginTop:20}}>
+                            <Typography variant="body2" display="block" gutterBottom>
+                                Description
+                            </Typography>
+                            <Editor data={formData[index].description} handleChange={(data) => handleOnChange({
+                                target:{
+                                    name:'description',
+                                    value:data
+                                }
+                            }, index)} />
+                            <div style={{ marginBottom: 20, marginTop: 20 }}>
                             </div>
                         </>
                     ))}

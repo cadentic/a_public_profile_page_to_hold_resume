@@ -5,14 +5,12 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import handler from '../../apiHandler';
+import Editor from '../Editor/Editor';
+import Typography from '@material-ui/core/Typography';
 
 export default function EditProfile(props) {
 
     const [formData, setFormData] = useState(props.init)
-
-    const handleOnChange = (e) => {
-        setFormData(e.target.value)
-    }
 
     const handleClose = () => {
         props.handleClose()
@@ -29,18 +27,8 @@ export default function EditProfile(props) {
     return (
         <div>
             <Dialog fullWidth={true} maxWidth={'sm'} open={props.open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogContent>
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="description"
-                        label="Project description"
-                        type="text"
-                        fullWidth
-                        multiline
-                        onChange={handleOnChange}
-                        value={formData}
-                    />
+                <DialogContent style={{paddingTop:50, overflowY:'auto', overflowX:'hidden'}}>
+                    <Editor data={formData} handleChange={(data)=>setFormData(data)} />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">

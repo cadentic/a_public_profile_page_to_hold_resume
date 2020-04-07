@@ -42,7 +42,7 @@ const SkillIndicatorOuter = styled.div`
     width: 29px;
     height: 29px;
     border-radius: 100%;
-    z-index: 999;
+    z-index: 95;
 `
 
 const SkillIndicatorInner = styled.div`
@@ -143,7 +143,7 @@ const Headerbottom = (props) => {
                 <div className="prag">
                     <br></br>
                     <h3 style={{ fontSize: '18px', lineHeight: '20px' }}>PERSONAL INFORMATION</h3>
-                    <p className="pr"> {personalData.description} </p>
+                    <div className="pr"  dangerouslySetInnerHTML={{__html: personalData.description}}></div>
                 </div>
 
             </div>
@@ -166,7 +166,7 @@ const Headerbottom = (props) => {
                                 <div style={{backgroundColor:'red', width:60, borderRadius:8}}> {entry.year} </div>
                                 <div className='arrow_box'></div>
                                 <span className='inst' style={{marginTop:60}}> <Icon fontSize="small" style={{ fontSize: 45}}>{entry.icon}</Icon></span>
-                                <p style={{ fontSize: '10px', textAlign: 'left' }}>{entry.description}</p>
+                                <div style={{ fontSize: '10px', textAlign: 'left', lineHeight:1.7 }} className="pr"  dangerouslySetInnerHTML={{__html: entry.description}}></div>
                             </Box>
                         )}
                     </Grid>
@@ -191,7 +191,7 @@ const Headerbottom = (props) => {
                             </label>
                             <span style={{ paddingLeft: '15px' }}>
                                 <p style={{ width: '100%', fontSize: '15px ' }}> {education[0].from + " - "+education[0].to+" | "+education[0].title} </p>
-                                <p> {education[0].description} </p>
+                                <div className="pr"  dangerouslySetInnerHTML={{__html: education[0].description}}></div>
                             </span>
                         </div>
                         <div className='Botrd'>
@@ -203,7 +203,7 @@ const Headerbottom = (props) => {
                             </label>
                             <span style={{ paddingLeft: '15px' }}>
                                 <p style={{ width: '100%', fontSize: '15px ' }}>  {education[1].from + " - "+education[1].to+" | "+education[1].title} </p>
-                                <p> {education[1].description} </p>
+                                <div className="pr"  dangerouslySetInnerHTML={{__html: education[1].description}}></div>
                             </span>
                         </div>
                     </div>
@@ -232,8 +232,7 @@ const Headerbottom = (props) => {
                                         </p>
                                         <p style={{ float: 'right' }}>{entry.title}</p>
                                     </div>
-                                    <div style={{ display: 'flex' }}>
-                                        <p style={{ fontSize: '12.3px' }}> {entry.description} </p>
+                                    <div style={{ display: 'flex', fontSize: '12.3px' }} dangerouslySetInnerHTML={{__html: entry.description}}>                                        
                                     </div>
                                     </>
                                     ))}
@@ -300,8 +299,9 @@ const Headerbottom = (props) => {
                     <p style={{ display: 'flex', justifyContent: 'flex-end' }}><button onClick={()=>{setOpenedEditor('project')}} style={{ backgroundColor: "red", borderBottomLeftRadius: '3px', borderTopLeftRadius: '3px' }}>Edit</button>
                         <button style={{ backgroundColor: "rgb(74, 75, 79)", borderBottomRightRadius: '3px', borderTopRightRadius: '3px' }}>Add</button></p>
                 </div>
-                <p style={{ color: "#fff" }} ><FilterCenterFocusIcon style={{ width: "40px", height: "40px", marginRight: "10px" }} />
-                    {projectDesc}
+                <p style={{ color: "#fff" }} >
+                    {/* <FilterCenterFocusIcon style={{ width: "40px", height: "40px", marginRight: "10px" }} /> */}
+                    <p dangerouslySetInnerHTML={{__html: projectDesc}}></p>
                 </p>
 
             </section>

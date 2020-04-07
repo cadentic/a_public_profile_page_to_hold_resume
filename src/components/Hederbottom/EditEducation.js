@@ -5,6 +5,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import handler from '../../apiHandler';
+import Editor from '../Editor/Editor';
+import Typography from '@material-ui/core/Typography';
 
 export const getCategories = async () => {
     return handler.get('/categories');
@@ -37,7 +39,7 @@ export default function EditWork(props) {
     return (
         <div>
             <Dialog fullWidth={true} maxWidth={'sm'} open={props.open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogContent>
+                <DialogContent style={{paddingTop:50, overflowY:'auto', overflowX:'hidden'}}>
 
                     {formData.map((entry, index) => (
                         <>
@@ -87,17 +89,15 @@ export default function EditWork(props) {
                                 onChange={(e)=>{handleOnChange(e,index)}}
                                 value={entry.to}
                             />
-                            <TextField
-                                margin="dense"  
-                                name="description"
-                                label="Description"
-                                type="text"
-                                fullWidth
-                                multiline
-                                onChange={(e)=>{handleOnChange(e,index)}}
-                                value={entry.description}
-
-                            />
+                            <Typography variant="body2" display="block" gutterBottom>
+                                Description
+                            </Typography>
+                            <Editor data={formData[index].description} handleChange={(data) => handleOnChange({
+                                target:{
+                                    name:'description',
+                                    value:data
+                                }
+                            }, index)} />
                             <div style={{marginBottom:30}}></div>
                         </>
                     ))}
