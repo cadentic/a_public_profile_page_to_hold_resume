@@ -14,10 +14,12 @@ height: 30px;
 `;
 
 
-const Header1 = () => {
+const Header1 = (props) => {
     return (
         <div style={{width:'100%'}}>
         <Nav activeKey="/home"
+        hidden={!props.showMenu}
+        style={{backgroundColor:'#212529', position:'fixed', top:'75px', width:1235, zIndex:9999}}
         onSelect={selectedKey => alert(`selected ${selectedKey}`)}
         >
         <Nav.Item>
@@ -42,7 +44,7 @@ const Header1 = () => {
             </Nav.Link>
         </Nav.Item>
         </Nav>
-        <section>
+        <section style={{marginTop:'75px'}}>
         <Headerbottom />
 
         </section>

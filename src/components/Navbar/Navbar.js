@@ -235,7 +235,7 @@ const Navbar = (props) => {
 
     return (
         <React.Fragment>
-            <Wrapper style={{position:'fixed', top:0, zIndex:1000}} >
+            <Wrapper style={{position:'fixed', top:0, zIndex:100000}} >
             <Sdiv>
                 <IconButtonWrapper menuBig>
                     <Wrapper sliderMenu onClick={() => {
@@ -277,8 +277,8 @@ const Navbar = (props) => {
                 <AccountDropdown avatarDropdown={avatarDropdown} />
                 </Sdiv>
             </Wrapper>
-            <Banner sliderDropdown={sliderDropdown} />
-                <SideBar sliderDropdown={sliderDropdown} />  
+            <Banner sliderDropdown={sliderDropdown} {...props} />
+            <SideBar sliderDropdown={sliderDropdown} />  
            
         </React.Fragment>
     )

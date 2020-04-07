@@ -6,9 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header1 from './components/Header/Header1';
 import ChatIcon from '@material-ui/icons/ChatBubbleOutline';
 import ChatView from './components/Chat/Chat';
-
-import Banner from './components/Navbar/Banner/Banner'
-import SideBar2 from './components/SideBar/SideBar'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 // Styles
 const Wrapper = styled.div`
@@ -67,6 +65,14 @@ function App(props) {
 
   const [isChatVisible, setIsChatVisible ] = useState(false)
   const [sideBarOpen, setSideBarOpen]  =useState(false)
+  const [videoVisible, setVideoVisible] = useState(true)
+  useScrollPosition(({ prevPos, currPos }) => {
+    if(currPos.y<-160){
+      setVideoVisible(false)
+    }else{
+      setVideoVisible(true)
+    }
+  })
 
   const toggleSidebarOpen = () => {
     setSideBarOpen(!sideBarOpen)
@@ -74,11 +80,11 @@ function App(props) {
 
   return (
     <StylesProvider injectFirst>
-      <Navbar toggleSidebar={toggleSidebarOpen} />
+      <Navbar toggleSidebar={toggleSidebarOpen} isvideoVisible={videoVisible} />
       <Wrapper bodyOuter>
         <SideBar />
         <Wrapper sideBarOpen={sideBarOpen}  bodyInner>
-          <Header1 />
+          {<Header1 showMenu={!videoVisible} />}
         </Wrapper>
         <SideBar />
         <ChatViewWrapper hidden={!isChatVisible}>

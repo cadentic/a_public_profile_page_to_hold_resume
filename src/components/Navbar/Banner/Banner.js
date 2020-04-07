@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { Player, BigPlayButton, ControlBar, PlayToggle, ProgressControl, DurationDisplay, CurrentTimeDisplay, TimeDivider, VolumeMenuButton, FullscreenToggle, CustomMenu} from 'video-react';
 import "../../../../node_modules/video-react/dist/video-react.css"; // import css
@@ -428,6 +428,8 @@ const Banner = (props) => {
     const [videoOne, setVideoOne] = useState(false);
     const [videoTwo, setVideoTwo] = useState(false);
 
+    const playerOneRef = useRef(null);
+
     const dropdownVar = props.sliderDropdown;
 
     return (
@@ -436,7 +438,7 @@ const Banner = (props) => {
         <Wrapper main>
             <Wrapper push dropdown={dropdownVar} />
             <Wrapper banner>
-                <VideoWrapper one videoState={videoOne} onClick={() => setVideoOne(true)}>
+                <VideoWrapper one videoState={videoOne} onClick={() => {setVideoOne(true);}}>
                     <h2>Timeline</h2>
                     <VideoPlayer one videoState={videoOne}
                         playsInline
@@ -444,7 +446,7 @@ const Banner = (props) => {
                         src="http://media.w3.org/2010/05/bunny/movie.mp4">
                         <BigPlayButton position="center" />
                         <ControlBar autoHide={false} disableDefaultControls={true}>
-                            <PlayToggle />
+                            <PlayToggle ref={null} />
                             <ProgressControl />
                             <CurrentTimeDisplay /> 
                             <TimeDivider />
@@ -456,7 +458,7 @@ const Banner = (props) => {
                         <videoActions />
                     </VideoPlayer>
                 </VideoWrapper>
-                <VideoWrapper two videoState={videoTwo} onClick={() => setVideoTwo(true)}>
+                <VideoWrapper two videoState={videoTwo} onClick={() => {setVideoTwo(true); playerOneRef.current.click()}}>
                     <h2>End to End implementation and support</h2>
                     <VideoPlayer two videoState={videoTwo}
                         playsInline
