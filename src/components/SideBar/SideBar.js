@@ -8,7 +8,7 @@ import Divider from '@material-ui/core/Divider';
 // Styles
 const Wrapper = styled.div`
     ${props => props.main && css`
-    width: 271px;
+    width: 220px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -40,14 +40,14 @@ const Wrapper = styled.div`
     `}
 `;
 const BlueBar = styled.div`
-    width: 19px;
+    width: 5px;
     height: 100vh;
     background: #4169E1;
     margin-left: auto;
     z-index: 99;
     position: absolute;
     top: 0;
-    left: 252px;
+    left: 215px;
 `;
 
 // Render

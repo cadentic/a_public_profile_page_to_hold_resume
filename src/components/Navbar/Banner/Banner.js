@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { Player, BigPlayButton, ControlBar, PlayToggle, ProgressControl, DurationDisplay, CurrentTimeDisplay, TimeDivider, VolumeMenuButton, FullscreenToggle, CustomMenu} from 'video-react';
 import "../../../../node_modules/video-react/dist/video-react.css"; // import css
@@ -12,22 +12,19 @@ import DownloadButton from './CustomButton';
 const Wrapper = styled.div`
     ${props => props.main && css`
         width: 100%;
-        height: 243px;
+        height: 225px;
         box-sizing: border-box;
-        border-top: 9px solid #ED1C24;
-        border-bottom: 9px solid #ED1C24;
         border-right: 9px solid #ED1C24;
         display: flex;
         @media screen and (max-width:800px){
           width: inherit;
-        height: inherit;
-        box-sizing: border-box;
-        border-top: 9px solid #ED1C24;
-        border-bottom: 9px solid #ED1C24;
-        border-right: 9px solid #ED1C24;
-        border-left: 9px solid #ED1C24;
-        display: flex;
-        flex-direction:column;
+          height: inherit;
+          box-sizing: border-box;
+          border-top: 9px solid #ED1C24;
+          border-bottom: 9px solid #ED1C24;
+          border-right: 9px solid #ED1C24;
+          display: flex;
+          flex-direction:column;
         }
     `}
     ${props => props.push && css`
@@ -37,22 +34,75 @@ const Wrapper = styled.div`
         background: #ED1C24;
     `}
     ${props => props.banner && css`
-       flex-grow: 1;
-       display: grid;
-       grid-template-columns: .24fr .52fr .24fr;
-       @media screen and (max-width:800px){
+
+        @media screen and (max-width:800px){
           width: 100%;
-        height: inherit;
-        /* border-left: 9px solid #ED1C24; */
-        display: flex;
-        flex-direction:column;
+          height: inherit;
+          display: flex;
+          flex-direction:column;
         }
+       
+
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-flow: row nowrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        width:100%
     `}
 `;
 
 const VideoWrapper = styled.div`
-    position: relative;
-    overflow: hidden;
+
+    @media screen and (max-width:800px){
+      width: 100%;
+      height: 100%;
+      max-width:100%
+    }
+
+    @media screen and (min-width:800px){
+      display: grid;
+      margin: auto;
+      position: relative;
+      -webkit-box-flex: 1;
+      flex: 1;
+      text-align: center;
+      color: white;
+      -webkit-transition: .3s;
+      transition: .3s;
+      max-width: 35%;
+      height: 100%;
+      min-width: 10%;
+
+      :before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-size: cover;
+        z-index: -1;
+      }
+  
+      :hover {
+        -webkit-transition: .5s;
+        transition: .5s;
+        max-width: 45% !important;
+        -webkit-box-flex: 2;
+        flex-grow: 2;
+        cursor: pointer;
+      }
+
+    }
+
+    
+
     ${props => props.one && css`
     h2{
         display: ${props.videoState ? `none` : `block`};
@@ -69,8 +119,10 @@ const VideoWrapper = styled.div`
     }
     `}
     ${props => props.two && css`
-       border-top:9px solid red;
-       border-bottom:9px solid red;
+        @media screen and (min-width:800px){
+          border-right: 9px solid red;
+          border-left: 9px solid red;
+        }
         h2{
             display: ${props.videoState ? `none` : `block`};
             position: absolute;
@@ -91,11 +143,7 @@ const VideoPlayer = styled(Player)`
     ${props => props.one && css`
         padding-top: 30% !important;
         min-height: 225px;
-        max-height: 225px;   
-        transition: transform 300ms;
-        ${VideoWrapper}:hover & {
-            transform: ${props => props.videoState ? `scale(1)` : `scale(1.1)`};
-        }
+        max-height: 225px;
 
         .video-react-big-play-button{
             border: 0.1rem solid #FF0000;
@@ -112,10 +160,6 @@ const VideoPlayer = styled(Player)`
         padding-top: 15% !important;
         min-height: 225px;
         max-height: 225px; 
-        transition: transform 300ms;
-        ${VideoWrapper}:hover & {
-            transform: ${props => props.videoState ? `scale(1)` : `scale(1.1)`};
-        }
 
         .video-react-big-play-button{
             border: 0.1rem solid #FF0000;
@@ -327,9 +371,54 @@ const VideoPlayer = styled(Player)`
 `;
 
 const ImgHolder = styled.div`
-    img{
+
+    @media screen and (max-width:800px){
+      width: 100%;
+      height: 100%;
+      max-width:100%
+    }
+
+    @media screen and (min-width:800px){
+      display: grid;
+      margin: auto;
+      position: relative;
+      -webkit-box-flex: 1;
+      flex: 1;
+      text-align: center;
+      color: white;
+      -webkit-transition: .3s;
+      transition: .3s;
+      max-width: 35%;
+      height: 100%;
+      min-width: 10%;
+      
+      :hover {
+        -webkit-transition: .5s;
+        transition: .5s;
+        max-width: 45% !important;
+        -webkit-box-flex: 2;
+        flex-grow: 2;
+        cursor: pointer;
+      }
+
+      :before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+        background-position: center bottom;
+        background-size: cover;
+        z-index: -1;
+      }
+    }
+
+    img{
+      object-fit:contain
+    }
+    div{
+      overflow:hidden
     }
 `;
 
@@ -339,13 +428,17 @@ const Banner = (props) => {
     const [videoOne, setVideoOne] = useState(false);
     const [videoTwo, setVideoTwo] = useState(false);
 
+    const playerOneRef = useRef(null);
+
     const dropdownVar = props.sliderDropdown;
 
     return (
+        <>
+        <div style={{height:9, backgroundColor:'red', width:'100%',marginTop:'75px'}}></div>
         <Wrapper main>
             <Wrapper push dropdown={dropdownVar} />
             <Wrapper banner>
-                <VideoWrapper one videoState={videoOne} onClick={() => setVideoOne(true)}>
+                <VideoWrapper one videoState={videoOne} onClick={() => {setVideoOne(true);}}>
                     <h2>Timeline</h2>
                     <VideoPlayer one videoState={videoOne}
                         playsInline
@@ -353,7 +446,7 @@ const Banner = (props) => {
                         src="http://media.w3.org/2010/05/bunny/movie.mp4">
                         <BigPlayButton position="center" />
                         <ControlBar autoHide={false} disableDefaultControls={true}>
-                            <PlayToggle />
+                            <PlayToggle ref={null} />
                             <ProgressControl />
                             <CurrentTimeDisplay /> 
                             <TimeDivider />
@@ -365,7 +458,7 @@ const Banner = (props) => {
                         <videoActions />
                     </VideoPlayer>
                 </VideoWrapper>
-                <VideoWrapper two videoState={videoTwo} onClick={() => setVideoTwo(true)}>
+                <VideoWrapper two videoState={videoTwo} onClick={() => {setVideoTwo(true); playerOneRef.current.click()}}>
                     <h2>End to End implementation and support</h2>
                     <VideoPlayer two videoState={videoTwo}
                         playsInline
@@ -385,10 +478,14 @@ const Banner = (props) => {
                     </VideoPlayer>
                 </VideoWrapper>
                 <ImgHolder>
-                    <img alt="" src={Poster3} />
+                    <div>
+                      <img alt="" src={Poster3} />
+                    </div>
                 </ImgHolder>
             </Wrapper>
         </Wrapper>
+        <div style={{height:9, backgroundColor:'red', width:'100%'}}></div>
+        </>
     )
 }
 

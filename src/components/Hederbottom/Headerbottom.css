@@ -1,5 +1,4 @@
-
-.Maindiv{
+.Maindiv {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -9,55 +8,36 @@
     border-radius: 5px;
     height: inherit;
 }
-li{
-    font-size: 10px!important;
-    line-height: 6px!important;
-    margin: 0px!important;
-    height: 10px!important;
-    width: 100%;
-    /* background-color: blanchedalmond!important; */
-    /* padding: 0px!important; */
-    border-radius: 30px!important;
 
-}
-ul{
-    /* margin-top: 40px!important; */
-    margin: 0px!important;
-    padding: 0px!important;
-    /* margin-left: -20px; */
-    width: 81px!important;
-    /* height: 70px!important; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    /* background-color: black; */
-}
 @media screen and (max-width: 800px) {
     .Maindiv {
-  display: flex!important;
-  flex-direction: column!important;
-    height: inherit!important;
-  }
+        display: flex!important;
+        flex-direction: column!important;
+        height: inherit!important;
+    }
 }
 
-.img{
+.img {
     width: 700px;
-     height: 150px;
+    height: 150px;
     width: 150px;
     border-radius: 100%;
     border: 4px solid rgb(204, 71, 38);
     margin-top: 45px!important;
 }
-.imeagediv{
+
+.imeagediv {
     width: 15%;
-    height:100%;
+    height: 100%;
     margin-left: 30px;
 }
-.Containtdiv{
+
+.Containtdiv {
     width: 60%;
 }
+
 @media screen and (max-width: 800px) {
-    .Containtdiv{
+    .Containtdiv {
         display: flex!important;
         flex-direction: column!important;
         height: inherit;
@@ -65,14 +45,16 @@ ul{
         margin: 0px;
         padding: 0px;
         font-size: 12px;
-  }
+    }
 }
-td{
+
+td {
     padding: 0px;
     margin: 0px;
     height: 0px!important;
-   /* background-color: red; */
+    /* background-color: red; */
 }
+
 /* @media screen and (max-width: 800px) {
     tr{
         display: flex;
@@ -89,7 +71,8 @@ td{
      flex-direction: column!important;
   }
 } */
-button{
+
+button {
     padding: 0px;
     margin: 0px;
     height: 25px;
@@ -97,17 +80,17 @@ button{
     padding-left: 20px;
     padding-right: 20px;
     border: 0px solid;
-    
-   
 }
-.bottonD{
+
+.bottonD {
     height: 30px!important;
     width: 130px;
     /* background-color: ; */
     text-align: right;
     padding-right: 5px;
 }
-.Icondiv{
+
+.Icondiv {
     width: 45%;
     height: 30px;
     display: flex;
@@ -116,6 +99,7 @@ button{
     align-items: center;
     color: white;
 }
+
 /* @media screen and (max-width: 800px) {
     .Icondiv{
   display: flex;
@@ -123,15 +107,14 @@ button{
    
   }
 } */
-table{
+
+table {
     height: 140px!important;
 }
 
-
-
 /* ////////////////////////////////////////////////// */
 
-.textDiv{
+.textDiv {
     width: 100%;
     height: 150px;
     /* background-color: red; */
@@ -139,75 +122,84 @@ table{
     flex-direction: row;
     justify-content: center;
 }
+
 @media screen and (max-width: 900px) {
-    .textDiv{
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px!important;
-   height: inherit;
-  }
-} 
+    .textDiv {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px!important;
+        height: inherit;
+    }
+}
+
 @media screen and (max-width: 900px) {
-    .prag{
-   width: 100%!important;
-   
-  }
-} 
+    .prag {
+        width: 100%!important;
+    }
+}
+
 @media screen and (max-width: 900px) {
-    .IconD{
-   width: 100%!important;
-   
-  }
-} 
-.IconD{
+    .IconD {
+        width: 100%!important;
+    }
+}
+
+.IconD {
     width: 40%;
     height: 100%;
     /* background-color: lawngreen; */
 }
-.prag{
+
+.prag {
     width: 50%;
     height: 100%;
 }
-h2{
-    width:50% ;
+
+h2 {
+    width: 50%;
     text-align: right;
     /* line-height: 3px; */
     border-bottom: 2px solid rgb(182, 178, 178);
     color: rgb(255, 44, 7);
 }
-.pragraoh{
+
+.pragraoh {
     line-height: 0px;
     width: 50%;
     text-align: right;
     color: rgb(175, 23, 23);
     font-size: 19px;
 }
-.pr{
+
+.pr {
     line-height: 19px;
     font-size: 16px;
 }
-label{
+
+label {
     height: auto;
     width: 60%;
     justify-content: space-between;
     display: flex;
     flex-direction: row;
 }
-span{
+
+span {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 12px;
-    
 }
 
 /* //////////////////////////////////////////////////// */
-section{
+
+section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.TopD{
+
+.TopD {
     width: 100%;
     height: 49%;
     background-color: rgb(50, 50, 51);
@@ -215,22 +207,25 @@ section{
     border-radius: 30px;
     color: white;
 }
-.BotD{
+
+.BotD {
     width: 100%;
     height: 49%;
     background-color: rgb(50, 50, 51);
     box-shadow: 5px 5px 50px 3px black;
     border-radius: 30px;
-  color: white;
+    color: white;
 }
-.TopD1{
+
+.TopD1 {
     width: 100%;
     height: 25%;
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
 }
-.TopR{
+
+.TopR {
     width: 55%;
     height: 100%;
     display: flex;
@@ -239,7 +234,8 @@ section{
     justify-content: space-between;
     padding-right: 20px;
 }
-.TopR1{
+
+.TopR1 {
     width: 65%;
     height: 100%;
     display: flex;
@@ -248,30 +244,33 @@ section{
     justify-content: space-between;
     padding-right: 20px;
 }
-.grigM{
+
+.grigM {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
 }
-.Box{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
+
+.Box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
-.inst{
+
+.inst {
     width: 55px;
     height: 55px;
     border-radius: 100%;
     border: 4px solid white;
     display: flex;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
 }
 
 /* ////// */
-.BotD1{
+
+.BotD1 {
     width: 100%;
     height: 70%;
     display: flex;
@@ -279,53 +278,56 @@ justify-content: space-between;
     justify-content: center;
     flex-wrap: wrap;
 }
-.BotLd,.Botrd{
- width: 49%;
- height: 100%;
- padding: 30px;
+
+.BotLd, .Botrd {
+    width: 49%;
+    height: 100%;
+    padding: 30px;
 }
+
 /* .Botrd{
     width: 50%;
     background-color: rgb(27, 20, 20);
     height: 100%;
    } */
 
+/* /////////////////////////////////////////////////////////////////////////////////// */
 
-   /* /////////////////////////////////////////////////////////////////////////////////// */
+.ToplD, .TopRd {
+    width: 49%;
+    height: 300px;
+    background-color: rgb(50, 50, 51);
+    box-shadow: 5px 5px 30px 3px black;
+    border-radius: 30px;
+    /* margin-top: 10px; */
+}
 
+.ToplD1, .ToplD2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    padding-right: 10px;
+    align-items: center;
+    /* background-color: red; */
+}
 
-   .ToplD,.TopRd{
-       width: 49%;
-       height: 300px;
-       background-color: rgb(50, 50, 51);
-       box-shadow: 5px 5px 30px 3px black;
-       border-radius: 30px;
-       /* margin-top: 10px; */
-   }
-   .ToplD1,.ToplD2{
-       width: 100%;
-       display: flex;
-       flex-direction: column;
-       padding-top: 8px;
-      padding-right: 10px;
-      align-items: center;
-       /* background-color: red; */
-   }
-   .Deate{
-       font-size: 40px;
-       background-color: red;
-       /* margin-top: 15px; */
-       margin-top: 5px;
-       /* margin-right: 10px; */
-   }
-   .Deate1{
+.Deate {
+    font-size: 40px;
+    background-color: red;
+    /* margin-top: 15px; */
+    margin-top: 5px;
+    /* margin-right: 10px; */
+}
+
+.Deate1 {
     font-size: 40px;
     background-color: red;
     margin-top: 70px;
     float: left!important;
 }
 
-   .TopRd{
+.TopRd {
     width: 49%;
     height: 300px;
     background-color: rgb(50, 50, 51);
@@ -335,99 +337,117 @@ justify-content: space-between;
     display: flex;
     justify-content: center;
     /* align-items: center!important; */
-   }
+}
 
-
-   .timeline {
+.timeline {
     position: relative;
     display: flex;
     /* margin: 0 auto; */
-    width: 30%;
-  }
-  
-  /* The actual timeline (the vertical ruler) */
-  .timeline::after {
+    width: 40%;
+}
+
+/* The actual timeline (the vertical ruler) */
+
+.skills-dash {
     content: '';
     position: absolute;
-   width: 85%;
-    height:1px;
-    background-color: yellow;
+    width: 85%;
+    height: 2px;
+    background-color: white;
     top: 13px;
     bottom: 0;
     left: 10px;
     margin-left: -3px;
-  }
-  
-  /* Container around content */
-  .container {
+    z-index: 22;
+}
+
+/* Container around content */
+
+.container {
     padding: 0px;
     position: relative;
     /* background-color: red; */
-     display: flex;
-     flex-direction: row;
-       width: 40%;
-       margin: 0px;
-  }
-  
-  .container::after {
-    content: '';
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+}
+
+.skill-level-outer {
     /* padding: 40px!important; */
-    width: 26px;
-    height: 26px;
-    background-color: rgb(145, 145, 43);
-    border: 2px solid rgb(253, 251, 249);
+    padding: 2px;
+    border: 2px solid white;
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+}
+
+
+.skill-level-inner {
+    /* padding: 40px!important; */
+    width: 100%;
+    height: 100%;
+    background-color: rgb(253, 251, 249);
     border-radius: 50%;
     z-index: 1;
-   }
-   @media screen and (max-width: 900px) {
-    section{
-    display: flex!important;
-    flex-direction: column!important;
-    height: inherit!important;
-    }
 }
+
 @media screen and (max-width: 900px) {
-    .ToplD,.TopRd{
-    width: 100%!important;
-    height: inherit!important;
-    margin-top: 20px;
+    section {
+        display: flex!important;
+        flex-direction: column!important;
+        height: inherit!important;
     }
 }
+
 @media screen and (max-width: 900px) {
-    .BotD1,.BotD{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+    .ToplD, .TopRd {
+        width: 100%!important;
+        height: inherit!important;
+        margin-top: 20px;
     }
 }
+
 @media screen and (max-width: 900px) {
-    .BotLd,.Botrd{
-   width: 100%;
+    .BotD1, .BotD {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .BotLd, .Botrd {
+        width: 100%;
+    }
+}
+
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-.OnD{
+.OnD {
     width: 100%;
     height: 100%;
     height: inherit;
     background-color: rgb(50, 50, 51);
     box-shadow: 5px 5px 50px 3px black;
     border-radius: 30px;
-  color: white;
-  display: flex;
-  justify-content: center;
+    color: white;
+    display: flex;
+    justify-content: space-around;
 }
-.OwnL,.OwnR{
+
+.OwnL, .OwnR {
     width: 49%;
     /* width: inherit; */
     height: 100%;
     background-color: rgb(47, 47, 97);
     border-radius: 30px;
-  color: white;
-  padding-left: 20px;
+    color: white;
+    padding-left: 20px;
 }
-.Pw{
+
+.Pw {
     width: 48px!important;
     border: 1px solid red;
     padding: auto;
@@ -435,22 +455,22 @@ justify-content: space-between;
     border-radius: 20px;
     text-align: center;
     font-size: 12px;
-    
 }
-.sec{
+
+.sec {
     background-color: rgb(50, 50, 51);
     box-shadow: 5px 5px 50px 3px black;
     border-radius: 30px;
-
 }
-.OnR{
+
+.OnR {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: space-between;
-    
 }
-.h5{
+
+.h5 {
     color: rgb(170, 5, 5);
     border-bottom: 2px solid gray;
     text-align: center;
@@ -460,42 +480,77 @@ justify-content: space-between;
     padding-bottom: 12px;
     font-size: 40px;
 }
+
 /* //////////////////////////////////////////////////////////////////////////// */
 
-.Tow{
+.Tow {
     width: 100%;
     height: 100%;
     height: inherit;
-  color: white;
-  display: flex;
-  justify-content: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+    color: white;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
-.RD,.Ld{
+
+.RD, .Ld {
     width: 48%;
     height: 60%;
     background-color: rgb(50, 50, 51);
     box-shadow: 5px 5px 50px 3px black;
     border-radius: 30px;
     display: flex;
-flex-direction: column;
-justify-content: space-between;    /* margin-left: 10px; */
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin-left: 10px; */
     padding: 20px;
-  display: flex;
-  justify-content: right;
+    display: flex;
+    justify-content: right;
 }
-.Ld{
+
+.Ld {
     margin-left: 10px;
 }
+
 /* ////////////////////////////////// */
-.LastD{
+
+.LastD {
     width: 98%;
     height: 70%;
     background-color: rgb(50, 50, 51);
     box-shadow: 5px 5px 50px 3px black;
     border-radius: 30px;
     display: flex;
+}
+
+
+.arrow_box {
+	position: relative;
+	background: 'red';
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: red;
+	border-width: 5px;
+	margin-left: -5px;
+}
+.arrow_box:before {
+	border-color: rgba(245, 71, 51, 0);
+	border-top-color: 'red';
+	border-width: 11px;
+	margin-left: -11px;
 }

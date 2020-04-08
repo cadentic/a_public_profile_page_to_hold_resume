@@ -42,3 +42,9 @@ a.nav-link.disabled {
 .nav-link {
     color: white;
 }
+
+.selected{
+    display: flex;
+    border-bottom:5px solid red;
+    color: white;
+}

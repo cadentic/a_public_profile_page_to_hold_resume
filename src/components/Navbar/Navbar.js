@@ -235,10 +235,12 @@ const Navbar = (props) => {
 
     return (
         <React.Fragment>
-            <Wrapper>
+            <Wrapper style={{position:'fixed', top:0, zIndex:100000}} >
             <Sdiv>
                 <IconButtonWrapper menuBig>
-                    <Wrapper sliderMenu onClick={() => setSliderDropdown(!sliderDropdown)}>
+                    <Wrapper sliderMenu onClick={() => {
+                        props.toggleSidebar()
+                        setSliderDropdown(!sliderDropdown)}}>
                         <MenuSlider fontSize="medium" />
                         <MenuArrow fontSize="small" rotateMenu={sliderDropdown} />
                     </Wrapper>
@@ -269,14 +271,14 @@ const Navbar = (props) => {
                             <AvatarArrow rotateAvatar={avatarDropdown} />
                         </Wrapper>
                     </IconButtonWrapper>
-                </Wrapper>
+                </Wrapper>                 
 
                 <VideoDropdown alarmDropdown={alarmDropdown} />
                 <AccountDropdown avatarDropdown={avatarDropdown} />
                 </Sdiv>
             </Wrapper>
-            <Banner sliderDropdown={sliderDropdown} />
-            <SideBar sliderDropdown={sliderDropdown} />
+            <Banner sliderDropdown={sliderDropdown} {...props} />
+            <SideBar sliderDropdown={sliderDropdown} />  
            
         </React.Fragment>
     )

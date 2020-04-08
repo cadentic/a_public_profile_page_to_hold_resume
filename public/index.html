@@ -21,12 +21,8 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  crossorigin="anonymous"
-/>
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -37,54 +33,9 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-    <script>
-      window.onload = function () {
-      
-      var chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,  
-        title:{
-          text: "Company Revenue by Year"
-        },
-        axisY: {
-          title: "Revenue in USD",
-          valueFormatString: "#0,,.",
-          suffix: "mn",
-          prefix: "$"
-        },
-        data: [{
-          type: "splineArea",
-          color: "rgba(54,158,173,.7)",
-          markerSize: 5,
-          xValueFormatString: "YYYY",
-          yValueFormatString: "$#,##0.##",
-          dataPoints: [
-            { x: new Date(2000, 0), y: 3289000 },
-            { x: new Date(2001, 0), y: 3830000 },
-            { x: new Date(2002, 0), y: 2009000 },
-            { x: new Date(2003, 0), y: 2840000 },
-            { x: new Date(2004, 0), y: 2396000 },
-            { x: new Date(2005, 0), y: 1613000 },
-            { x: new Date(2006, 0), y: 2821000 },
-            { x: new Date(2007, 0), y: 2000000 },
-            { x: new Date(2008, 0), y: 1397000 },
-            { x: new Date(2009, 0), y: 2506000 },
-            { x: new Date(2010, 0), y: 2798000 },
-            { x: new Date(2011, 0), y: 3386000 },
-            { x: new Date(2012, 0), y: 6704000},
-            { x: new Date(2013, 0), y: 6026000 },
-            { x: new Date(2014, 0), y: 2394000 },
-            { x: new Date(2015, 0), y: 1872000 },
-            { x: new Date(2016, 0), y: 2140000 }
-          ]
-        }]
-        });
-      chart.render();
-      
-      }
-      </script>
+
   </head>
   <body>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
